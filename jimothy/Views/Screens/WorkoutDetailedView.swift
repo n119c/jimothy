@@ -96,7 +96,7 @@ struct WorkoutDetailedView: View {
                                 }
                             }
                         }
-                        .padding(.horizontal, 7)
+                        .padding(.horizontal, 10)
                         
                         if !isEditing, !workout.exercises.isEmpty {
 //                            WorkoutCompleteButton(showCompletion: $showCompletion) {
@@ -105,6 +105,7 @@ struct WorkoutDetailedView: View {
                             SwipeButtonView() {
                                 completeWorkout()
                             }
+                            .padding(.top)
                         } else {
                             Button {
                                 dismissKeyboard()

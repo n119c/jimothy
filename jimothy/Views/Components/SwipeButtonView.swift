@@ -23,18 +23,37 @@ struct SwipeButtonView: View {
     
     var body: some View {
         ZStack {
-            // BACKGROUND TRACK
-            // right side of bar
-            Capsule()
-                .frame(width: CGFloat(barWidth), height: 70)
-                .foregroundStyle(Color.theme.mainAccent)
-                .shadow(color: Color.theme.shadow, radius: 10)
             
-//            // left side of bar
-//            Capsule()
-//                .frame(width: CGFloat(barWidth), height: 70)
-//                .foregroundStyle(Color.theme.secondaryText)
-//                .shadow(color: Color.theme.shadow, radius: 10)
+//            // BACKGROUND TRACK
+//            ZStack(alignment: .leading) {
+//                // right side of bar
+//                Capsule()
+//                    .frame(width: CGFloat(barWidth), height: 45)
+//                    .foregroundStyle(Color.gray)
+//                    .shadow(radius: 10)
+//                
+//                // left side of bar
+//                Capsule()
+//                    .frame(width: CGFloat(buttonWidth + offset), height: 45)
+//                    .foregroundStyle(Color.red)
+//                    .shadow(radius: 10)
+//            }
+            
+            
+            
+            // BACKGROUND TRACK
+            ZStack(alignment: .leading) {
+                // right side of bar
+                Capsule()
+                    .frame(width: CGFloat(barWidth), height: 45)
+                    .foregroundStyle(Color.theme.background)
+                    .shadow(color: Color.theme.shadow, radius: 7.5)
+                
+                // left side of bar
+                Capsule()
+                    .frame(width: CGFloat(buttonWidth + offset), height: 45)
+                    .foregroundStyle(Color.theme.mainAccent)
+            }
             
             Text("complete workout")
                 .font(.subheadline)
@@ -48,6 +67,7 @@ struct SwipeButtonView: View {
                 Circle()
                     .frame(width: CGFloat(buttonWidth), height: CGFloat(buttonWidth))
                     .foregroundStyle(Color.theme.main)
+                    .shadow(color: Color.theme.shadow, radius: 5)
                     
                 
                 Image(systemName: "checkmark")
